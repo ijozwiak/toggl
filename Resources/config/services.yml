@@ -1,0 +1,9 @@
+imports:
+    - { resource: parameters.yml }
+services:
+    toggl.api:
+        class: %toggl.api.class%
+
+    toggl.service:
+        class: %toggl.service.class%
+        arguments: ['@toggl.api', '%toggl_service_name%', '%toggl_default_entry_name%', '%toggl_default_project_id%','%toggl_default_task_id%']
