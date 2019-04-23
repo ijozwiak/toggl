@@ -1,0 +1,26 @@
+{
+	"name": "giat/toggl",
+    "type": "library",
+    "description": "Extension service for morningtrain/toggl-api",
+    "keywords": ["toggl","api", "php"],
+    "homepage": "https://github.com/ijozwiak/toggl",
+    "license": "GNU General Public License v3.0",
+    "authors": [
+        {
+            "name": "Iwona Jóźwiak",
+            "email": "iwona@giat.pl",
+            "homepage": "http://iwona.giat.pl/",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Giat\\TogglBundle\\": "src/"
+        }
+    },
+    "require": {
+        "morningtrain/toggl-api": "^1.0"
+    },
+	"require-dev": {
+	}
+}

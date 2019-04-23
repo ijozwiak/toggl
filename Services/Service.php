@@ -1,14 +1,15 @@
 <?php
 /**
  * @author      Iwona Jóźwiak <ijozwiak@divante.pl>
- * @category    DivanteAdventere
- * @package     TogglService
+ * @category    DivanteAdventure
+ * @package     TogglBundle
  * @date        10.12.2017
  * @copyright   Copyright (C) 2017 Divante Sp. z o.o.
  * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 
 namespace TogglBundle\Services;
+use TogglBundle\lib\TogglLibraryInterface;
 
 /**
  * Class Service
@@ -16,6 +17,8 @@ namespace TogglBundle\Services;
  */
 class Service
 {
+    protected $togglApi;
+
     /**
      * Service constructor.
      * @param TogglApi $togglApi
@@ -24,7 +27,7 @@ class Service
      * @param int $defaultProjectId
      * @param int $defaultTaskId
      */
-    public function __construct(Toggl $togglApi, $apiName, $defaultEntryName, $defaultProjectId, $defaultTaskId)
+    public function __construct(TogglLibraryInterface $togglApi, $apiName, $defaultEntryName, $defaultProjectId, $defaultTaskId)
     {
         $this->togglApi = $togglApi;
 

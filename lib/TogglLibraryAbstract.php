@@ -1,9 +1,22 @@
 <?php
+/**
+ * @author      Iwona Jóźwiak <ijozwiak@divante.pl>
+ * @category    DivanteAdventure
+ * @package     TogglBundle
+ * @date        10.12.2017
+ * @copyright   Copyright (C) 2017 Divante Sp. z o.o.
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+
 namespace TogglBundle\lib;
 
 use MorningTrain\TogglApi\TogglApi;
 use TogglBundle\lib\TogglLibraryInterface;
 
+/**
+ * Class TogglLibraryAbstract
+ * @package TogglBundle\lib
+ */
 abstract class TogglLibraryAbstract implements TogglLibraryInterface
 {
     /** @const int Entry's duration */
@@ -26,13 +39,6 @@ abstract class TogglLibraryAbstract implements TogglLibraryInterface
 
     /** @var  string $togglEntryName */
     protected $togglEntryName;
-
-    /**
-     * TogglLibraryAbstract constructor.
-     */
-    public function __construct()
-    {
-    }
 
     /**
      * Init togglApi
