@@ -1,5 +1,5 @@
 {
-	"name": "giat/toggl",
+    "name": "giat/toggl",
     "type": "library",
     "description": "Extension service for morningtrain/toggl-api",
     "keywords": ["toggl","api", "php"],
@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Giat\\TogglBundle\\": "src/"
+            "giat\\TogglBundle\\": "src/"
         }
     },
     "require": {
