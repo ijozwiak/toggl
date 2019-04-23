@@ -1,6 +1,7 @@
 {
     "name": "giat/toggl",
     "type": "library",
+    "version": "1.0.0",	
     "description": "Extension service for morningtrain/toggl-api",
     "keywords": ["toggl","api", "php"],
     "homepage": "https://github.com/ijozwiak/toggl",
