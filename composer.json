@@ -4,7 +4,6 @@
     "description": "Extension service for morningtrain/toggl-api",
     "keywords": ["toggl","api", "php"],
     "homepage": "https://github.com/ijozwiak/toggl",
-    "proprietary": "GNU General Public License v3.0",
     "authors": [
         {
             "name": "Iwona Jóźwiak",
@@ -15,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Giat\\TogglBundle\\": "src/"
+            "TogglBundle\\": "src/"
         }
     },
     "require": {
