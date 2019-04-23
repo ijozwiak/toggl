@@ -1,6 +1,7 @@
 parameters:
-    toggl_service_name: Divante Adventure Toggl APi
+    toggl_service_name: 'Divante Adventure Toggl APi'
     toggl_default_entry_name: Urlop
     toggl_default_project_id: 0
     toggl_default_task_id: 0
-    toggl_tasks: [0,0,0]
+    toggl.api.class: TogglBundle\Services\Toggl
+    toggl.service.class: TogglBundle\Services\Service

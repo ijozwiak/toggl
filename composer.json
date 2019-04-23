@@ -1,6 +1,7 @@
 {
-	"name": "giat/toggl",
+    "name": "giat/toggl",
     "type": "library",
+    "version": "1.0.0",	
     "description": "Extension service for morningtrain/toggl-api",
     "keywords": ["toggl","api", "php"],
     "homepage": "https://github.com/ijozwiak/toggl",
@@ -14,12 +15,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "TogglBundle\\": "src/"
+            "TogglBundle//": "src/"
         }
     },
     "require": {
         "morningtrain/toggl-api": "^1.0"
-    },
-	"require-dev": {
-	}
+    }
 }
