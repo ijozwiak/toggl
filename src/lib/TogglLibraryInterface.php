@@ -78,4 +78,9 @@ interface TogglLibraryInterface
      * @param null|int $taskId
      */
     public function setTID(&$params, $taskId);
+
+    /**
+     * @param array $config
+     */
+    public function setConfig($config)
 }
