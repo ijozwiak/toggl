@@ -82,5 +82,5 @@ interface TogglLibraryInterface
     /**
      * @param array $config
      */
-    public function setConfig($config)
+    public function setConfig($config);
 }
