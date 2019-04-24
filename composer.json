@@ -5,6 +5,7 @@
     "description": "Extension service for morningtrain/toggl-api",
     "keywords": ["toggl","api", "php"],
     "homepage": "https://github.com/ijozwiak/toggl",
+    "license": "LGPL-3.0",
     "authors": [
         {
             "name": "Iwona Jóźwiak",
