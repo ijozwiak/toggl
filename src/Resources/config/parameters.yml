@@ -6,25 +6,10 @@ parameters:
       default_task_id: 0
       mapping:
         projects:
-          0: 10127395
+          0: 0
         tasks:
           0:
-            name: Urlop Wypoczynkowy / Dzień wolny
-            id: 16596605
-          1:
-            name: Urlop Krwiodawstwo
-            id: 16732013
-          2:
-            name: Urlop Okolicznościowy
-            id: 16732012
-          3:
-            name: Urlop Opieka nad dzieckiem
-            id: 16732011
-          4:
-            name: Urlop Macierzyński / Ojcowski
-            id: 16732010
-          5:
-            name: Urlop Bezpłatny / Dzień wolny bezpłatny
-            id: 16732006
+            name: Urlop
+            id: 0
     toggl.api.class: TogglBundle\Services\Toggl
     toggl.service.class: TogglBundle\Services\Service
