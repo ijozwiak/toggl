@@ -27,14 +27,11 @@ class Service
      * @param int $defaultProjectId
      * @param int $defaultTaskId
      */
-    public function __construct(TogglLibraryInterface $togglApi, $apiName, $defaultEntryName, $defaultProjectId, $defaultTaskId)
+    public function __construct(TogglLibraryInterface $togglApi, $settings)
     {
         $this->togglApi = $togglApi;
 
-        $this->togglApi->setTogglApiName($apiName);
-        $this->togglApi->setTogglEntryName($defaultEntryName);
-        $this->togglApi->setTogglProjectId($defaultProjectId);
-        $this->togglApi->setTogglTaskId($defaultTaskId);
+        $this->togglApi->setConfig($settings);
     }
 
     /**

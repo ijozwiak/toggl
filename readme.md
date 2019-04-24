@@ -1,5 +1,5 @@
 # About
-
+It is packacke for mapping projecst and tasks in toggl with settings in our application.
  
 
 # Installation
@@ -14,7 +14,7 @@ composer require giat/toggl
 
 It depends on morningtrain/toggl-api ver 1.0.4.
 
-Guzzle can be added with the following composer snippet:
+Toggl-api can be added with the following composer snippet:
 (or automatically when installing through composer)
 
 ```

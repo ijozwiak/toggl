@@ -40,6 +40,8 @@ class Toggl extends TogglLibraryAbstract implements TogglLibraryInterface
 
         $this->setPID($params, $projectId);
         $this->setTID($params, $taskId);
+        $this->setTogglEntryName($entryName, $params);
+        $params['description'] = $this->getDescription($entryName);
 
         return $this->togglApi->createTimeEntry($params);
     }

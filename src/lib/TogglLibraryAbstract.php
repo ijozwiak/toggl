@@ -40,6 +40,40 @@ abstract class TogglLibraryAbstract implements TogglLibraryInterface
     /** @var  string $togglEntryName */
     protected $togglEntryName;
 
+    /** @var  array $config */
+    protected $config;
+
+
+    /**
+     * Map project id
+     *
+     * @param array $params
+     * @param null|int $projectId
+     */
+    private function _mapPID($projectId)
+    {
+        if (isset($this->config['mapping']['projects'][$projectId])) {
+            return $this->config['mapping']['projects'][$projectId];
+        }
+
+        return $projectId;
+    }
+
+    /**
+     * Map task id
+     *
+     * @param array $params
+     * @param null|int $projectId
+     */
+    private function _mapTID($taskId)
+    {
+        if (isset($this->config['mapping']['tasks'][$taskId]['id'])) {
+            return $this->config['mapping']['tasks'][$taskId]['id'];
+        }
+
+        return $taskId;
+    }
+
     /**
      * Init togglApi
      * @param string $apiToken
@@ -70,7 +104,14 @@ abstract class TogglLibraryAbstract implements TogglLibraryInterface
      */
     public function getDescription($entryName)
     {
-        return !is_null($entryName) ? $entryName : $this->togglEntryName;
+        if (!$entryName
+            && !is_null($this->togglTaskId)
+            && isset($this->config['mapping']['tasks'][$this->togglTaskId]['name'])
+        ) {
+            return $this->config['mapping']['tasks'][$this->togglTaskId]['name'];
+        } else {
+            return $this->togglEntryName;
+        }
     }
 
     /**
@@ -91,10 +132,11 @@ abstract class TogglLibraryAbstract implements TogglLibraryInterface
      */
     public function setPID(&$params, $projectId)
     {
-        if ($projectId) {
-            $params['pid'] = $projectId;
-        } else if ($this->togglProjectId) {
-            $params['pid'] = $this->togglProjectId;
+        if (!is_null($projectId)) {
+            $params['pid'] = $this->_mapPID($projectId);
+            $this->togglProjectId = $projectId;
+        } else if (!is_null($this->togglProjectId)) {
+            $params['pid'] = $this->_mapPID($this->togglProjectId);
         }
     }
 
@@ -106,10 +148,11 @@ abstract class TogglLibraryAbstract implements TogglLibraryInterface
      */
     public function setTID(&$params, $taskId)
     {
-        if ($taskId) {
-            $params['tid'] = $taskId;
-        } else if ($this->togglTaskId) {
-            $params['tid'] = $this->togglTaskId;
+        if (!is_null($taskId)) {
+            $params['tid'] = $this->_mapTID($taskId);
+            $this->togglTaskId = $taskId;
+        } else if (!is_null($this->togglTaskId)) {
+            $params['tid'] = $this->_mapTID($this->togglTaskId);
         }
     }
 
@@ -143,5 +186,17 @@ abstract class TogglLibraryAbstract implements TogglLibraryInterface
     public function setTogglTaskId($defaultTaksId)
     {
         $this->togglTaskId    = $defaultTaksId;
+    }
+
+    /**
+     * @param array $config
+     */
+    public function setConfig($config)
+    {
+        $this->config    = $config;
+        $this->setTogglApiName($config['service_name']);
+        $this->setTogglEntryName($config['default_entry_name']);
+        $this->setTogglProjectId($config['default_project_id']);
+        $this->setTogglTaskId($config['default_task_id']);
     }
 }

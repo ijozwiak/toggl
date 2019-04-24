@@ -6,4 +6,4 @@ services:
 
     toggl.service:
         class: %toggl.service.class%
-        arguments: ['@toggl.api', '%toggl_service_name%', '%toggl_default_entry_name%', '%toggl_default_project_id%','%toggl_default_task_id%']
+        arguments: ['@toggl.api', '%toggl_settings%']
