@@ -1,7 +1,7 @@
 <?php
 /**
- * @author      Iwona Jóźwiak <ijozwiak@divante.pl>
- * @category    DivanteAdventure
+ * @author      Iwona Jóźwiak <iwona@giat.pl>
+ * @category    DA
  * @package     TogglBundle
  * @date        10.12.2017
  * @copyright   Copyright (C) 2017 Divante Sp. z o.o.
